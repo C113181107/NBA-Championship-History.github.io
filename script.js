@@ -144,23 +144,23 @@ const data = {
     }
   },
   2023: {
-    east: {
-      teams: "密爾瓦基公鹿 4-3 波士頓塞爾提克",
-      mvp: "Giannis Antetokounmpo",
-      starters: ["Jrue Holiday", "Khris Middleton", "Giannis Antetokounmpo", "Brook Lopez", "Grayson Allen"]
-    },
-    west: {
-      teams: "丹佛金塊 4-3 洛杉磯湖人",
-      mvp: "Nikola Jokic",
-      starters: ["Jamal Murray", "Kentavious Caldwell-Pope", "Michael Porter Jr.", "Aaron Gordon", "Nikola Jokic"]
-    },
-    finals: {
-      teams: "丹佛金塊 4-2 密爾瓦基公鹿",
-      fmvp: "Nikola Jokic",
-      startersEast: ["Jrue Holiday", "Khris Middleton", "Giannis Antetokounmpo", "Brook Lopez", "Grayson Allen"],
-      startersWest: ["Jamal Murray", "Kentavious Caldwell-Pope", "Michael Porter Jr.", "Aaron Gordon", "Nikola Jokic"]
-    }
+  east: {
+    teams: "邁阿密熱火 4-3 波士頓塞爾提克",
+    mvp: "Jimmy Butler",
+    starters: ["Jimmy Butler", "Caleb Martin", "Bam Adebayo", "Max Strus", "Gabe Vincent"]
   },
+  west: {
+    teams: "丹佛金塊 4-0 洛杉磯湖人",
+    mvp: "Nikola Jokic",
+    starters: ["Jamal Murray", "Kentavious Caldwell-Pope", "Michael Porter Jr.", "Aaron Gordon", "Nikola Jokic"]
+  },
+  finals: {
+    teams: "丹佛金塊 4-1 邁阿密熱火",
+    fmvp: "Nikola Jokic",
+    startersEast: ["Jimmy Butler", "Caleb Martin", "Bam Adebayo", "Max Strus", "Gabe Vincent"],
+    startersWest: ["Jamal Murray", "Kentavious Caldwell-Pope", "Michael Porter Jr.", "Aaron Gordon", "Nikola Jokic"]
+  }
+},
   2024: {
     east: {
       teams: "波士頓塞爾提克 4-0 印第安那溜馬",
