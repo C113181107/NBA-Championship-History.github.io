@@ -109,7 +109,7 @@ const data = {
   },
   2021: {
     east: {
-      teams: "密爾瓦基公鹿 4-3 亞特蘭大老鷹",
+      teams: "密爾瓦基公鹿 4-2 亞特蘭大老鷹",
       mvp: "Giannis Antetokounmpo",
       starters: ["Jrue Holiday", "Khris Middleton", "Giannis Antetokounmpo", "Brook Lopez", "P.J. Tucker"]
     },
