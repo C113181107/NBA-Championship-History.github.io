@@ -37,7 +37,7 @@ const data = {
   },
   2017: {
     east: {
-      teams: "克里夫蘭騎士 4-0 波士頓塞爾提克",
+      teams: "克里夫蘭騎士 4-1 波士頓塞爾提克",
       mvp: "LeBron James",
       starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"]
     },
