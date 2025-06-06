@@ -2,8 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NBA 冠軍賽資訊查詢</title>
+  <title>NBA 冠軍賽資訊查詢 (2015-2024)</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -28,6 +27,7 @@
       padding: 20px;
       border-radius: 6px;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
     }
     h3 {
       margin-top: 20px;
@@ -56,10 +56,227 @@
 
   <button onclick="showData()">查詢</button>
 
-  <div id="result">
-    <!-- 查詢結果會顯示在這裡 -->
-  </div>
+  <div id="result"></div>
 
-  <script src="script.js"></script>
+  <script>
+    const data = {
+      2015: {
+        east: {
+          teams: "克里夫蘭騎士 4-0 亞特蘭大老鷹",
+          mvp: "LeBron James",
+          starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"]
+        },
+        west: {
+          teams: "金州勇士 4-2 休士頓火箭",
+          mvp: "Andre Iguodala",
+          starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andre Iguodala", "Harrison Barnes"]
+        },
+        finals: {
+          teams: "金州勇士 4-2 克里夫蘭騎士",
+          fmvp: "Andre Iguodala",
+          startersEast: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
+          startersWest: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andre Iguodala", "Harrison Barnes"]
+        }
+      },
+      2016: {
+        east: {
+          teams: "克里夫蘭騎士 4-2 多倫多暴龍",
+          mvp: "LeBron James",
+          starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"]
+        },
+        west: {
+          teams: "金州勇士 4-3 奧克拉荷馬雷霆",
+          mvp: "Kevin Durant",
+          starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevin Durant", "Andre Iguodala"]
+        },
+        finals: {
+          teams: "克里夫蘭騎士 4-3 金州勇士",
+          fmvp: "LeBron James",
+          startersEast: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
+          startersWest: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevin Durant", "Andre Iguodala"]
+        }
+      },
+      2017: {
+        east: {
+          teams: "克里夫蘭騎士 4-0 波士頓塞爾提克",
+          mvp: "LeBron James",
+          starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"]
+        },
+        west: {
+          teams: "金州勇士 4-0 聖安東尼奧馬刺",
+          mvp: "Kevin Durant",
+          starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevin Durant", "Andre Iguodala"]
+        },
+        finals: {
+          teams: "金州勇士 4-1 克里夫蘭騎士",
+          fmvp: "Kevin Durant",
+          startersEast: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
+          startersWest: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevin Durant", "Andre Iguodala"]
+        }
+      },
+      2018: {
+        east: {
+          teams: "克里夫蘭騎士 4-3 波士頓塞爾提克",
+          mvp: "LeBron James",
+          starters: ["LeBron James", "Kevin Love", "J.R. Smith", "Larry Nance Jr.", "George Hill"]
+        },
+        west: {
+          teams: "金州勇士 4-2 休士頓火箭",
+          mvp: "Kevin Durant",
+          starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevin Durant", "Andre Iguodala"]
+        },
+        finals: {
+          teams: "金州勇士 4-0 克里夫蘭騎士",
+          fmvp: "Kevin Durant",
+          startersEast: ["LeBron James", "Kevin Love", "J.R. Smith", "Larry Nance Jr.", "George Hill"],
+          startersWest: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevin Durant", "Andre Iguodala"]
+        }
+      },
+      2019: {
+        east: {
+          teams: "多倫多暴龍 4-3 密爾瓦基公鹿",
+          mvp: "Kawhi Leonard",
+          starters: ["Kyle Lowry", "Danny Green", "Kawhi Leonard", "Pascal Siakam", "Marc Gasol"]
+        },
+        west: {
+          teams: "金州勇士 4-0 波特蘭拓荒者",
+          mvp: "Stephen Curry",
+          starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevon Looney", "DeMarcus Cousins"]
+        },
+        finals: {
+          teams: "多倫多暴龍 4-2 金州勇士",
+          fmvp: "Kawhi Leonard",
+          startersEast: ["Kyle Lowry", "Danny Green", "Kawhi Leonard", "Pascal Siakam", "Marc Gasol"],
+          startersWest: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevon Looney", "DeMarcus Cousins"]
+        }
+      },
+      2020: {
+        east: {
+          teams: "邁阿密熱火 4-2 波士頓塞爾提克",
+          mvp: "Jimmy Butler",
+          starters: ["Goran Dragic", "Duncan Robinson", "Jimmy Butler", "Bam Adebayo", "Jae Crowder"]
+        },
+        west: {
+          teams: "洛杉磯湖人 4-1 丹佛金塊",
+          mvp: "Anthony Davis",
+          starters: ["LeBron James", "Danny Green", "Kentavious Caldwell-Pope", "Anthony Davis", "Alex Caruso"]
+        },
+        finals: {
+          teams: "洛杉磯湖人 4-2 邁阿密熱火",
+          fmvp: "LeBron James",
+          startersEast: ["Goran Dragic", "Duncan Robinson", "Jimmy Butler", "Bam Adebayo", "Jae Crowder"],
+          startersWest: ["LeBron James", "Danny Green", "Kentavious Caldwell-Pope", "Anthony Davis", "Alex Caruso"]
+        }
+      },
+      2021: {
+        east: {
+          teams: "密爾瓦基公鹿 4-3 亞特蘭大老鷹",
+          mvp: "Giannis Antetokounmpo",
+          starters: ["Jrue Holiday", "Khris Middleton", "Giannis Antetokounmpo", "Brook Lopez", "P.J. Tucker"]
+        },
+        west: {
+          teams: "鳳凰城太陽 4-2 洛杉磯快艇",
+          mvp: "Chris Paul",
+          starters: ["Chris Paul", "Devin Booker", "Mikal Bridges", "Jae Crowder", "Deandre Ayton"]
+        },
+        finals: {
+          teams: "密爾瓦基公鹿 4-2 鳳凰城太陽",
+          fmvp: "Giannis Antetokounmpo",
+          startersEast: ["Jrue Holiday", "Khris Middleton", "Giannis Antetokounmpo", "Brook Lopez", "P.J. Tucker"],
+          startersWest: ["Chris Paul", "Devin Booker", "Mikal Bridges", "Jae Crowder", "Deandre Ayton"]
+        }
+      },
+      2022: {
+        east: {
+          teams: "波士頓塞爾提克 4-3 密爾瓦基公鹿",
+          mvp: "Jayson Tatum",
+          starters: ["Marcus Smart", "Jaylen Brown", "Jayson Tatum", "Al Horford", "Robert Williams III"]
+        },
+        west: {
+          teams: "金州勇士 4-2 丹佛金塊",
+          mvp: "Stephen Curry",
+          starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andrew Wiggins", "Kevon Looney"]
+        },
+        finals: {
+          teams: "金州勇士 4-2 波士頓塞爾提克",
+          fmvp: "Stephen Curry",
+          startersEast: ["Marcus Smart", "Jaylen Brown", "Jayson Tatum", "Al Horford", "Robert Williams III"],
+          startersWest: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andrew Wiggins", "Kevon Looney"]
+        }
+      },
+      2023: {
+        east: {
+          teams: "密爾瓦基公鹿 4-3 波士頓塞爾提克",
+          mvp: "Giannis Antetokounmpo",
+          starters: ["Jrue Holiday", "Khris Middleton", "Giannis Antetokounmpo", "Brook Lopez", "Grayson Allen"]
+        },
+        west: {
+          teams: "丹佛金塊 4-3 洛杉磯湖人",
+          mvp: "Nikola Jokic",
+          starters: ["Jamal Murray", "Kentavious Caldwell-Pope", "Michael Porter Jr.", "Aaron Gordon", "Nikola Jokic"]
+        },
+        finals: {
+          teams: "丹佛金塊 4-2 密爾瓦基公鹿",
+          fmvp: "Nikola Jokic",
+          startersEast: ["Jrue Holiday", "Khris Middleton", "Giannis Antetokounmpo", "Brook Lopez", "Grayson Allen"],
+          startersWest: ["Jamal Murray", "Kentavious Caldwell-Pope", "Michael Porter Jr.", "Aaron Gordon", "Nikola Jokic"]
+        }
+      },
+      2024: {
+        east: {
+          teams: "（待補）",
+          mvp: "（待補）",
+          starters: []
+        },
+        west: {
+          teams: "（待補）",
+          mvp: "（待補）",
+          starters: []
+        },
+        finals: {
+          teams: "（待補）",
+          fmvp: "（待補）",
+          startersEast: [],
+          startersWest: []
+        }
+      }
+    };
+
+    function showData() {
+      const year = document.getElementById("yearSelect").value;
+      const result = document.getElementById("result");
+
+      if (!year || !data[year]) {
+        result.textContent = "請選擇有效的年份";
+        return;
+      }
+
+      const yearData = data[year];
+
+      const east = yearData.east;
+      const west = yearData.west;
+      const finals = yearData.finals;
+
+      let output = `=== ${year} NBA 季後賽資訊 ===\n\n`;
+
+      output += `東區冠軍賽：\n`;
+      output += `球隊與比分: ${east.teams}\n`;
+      output += `MVP: ${east.mvp}\n`;
+      output += `先發五人: ${east.starters.join(", ")}\n\n`;
+
+      output += `西區冠軍賽：\n`;
+      output += `球隊與比分: ${west.teams}\n`;
+      output += `MVP: ${west.mvp}\n`;
+      output += `先發五人: ${west.starters.join(", ")}\n\n`;
+
+      output += `總冠軍賽：\n`;
+      output += `球隊與比分: ${finals.teams}\n`;
+      output += `FMVP: ${finals.fmvp}\n`;
+      output += `東區先發五人: ${finals.startersEast.join(", ")}\n`;
+      output += `西區先發五人: ${finals.startersWest.join(", ")}\n`;
+
+      result.textContent = output;
+    }
+  </script>
 </body>
 </html>
