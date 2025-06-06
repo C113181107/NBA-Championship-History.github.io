@@ -73,7 +73,7 @@ const data = {
   },
   2019: {
     east: {
-      teams: "多倫多暴龍 4-3 密爾瓦基公鹿",
+      teams: "多倫多暴龍 4-2 密爾瓦基公鹿",
       mvp: "Kawhi Leonard",
       starters: ["Kyle Lowry", "Danny Green", "Kawhi Leonard", "Pascal Siakam", "Marc Gasol"]
     },
