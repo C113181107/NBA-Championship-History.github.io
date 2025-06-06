@@ -1,32 +1,46 @@
 const data = {
   2015: {
-    ecf: "騎士 4-0 老鷹 - MVP: LeBron James",
-    finals: "勇士 4-2 騎士 - FMVP: Andre Iguodala",
-    starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
-    image: "https://example.com/2015.jpg"
+    east: {
+      teams: "克里夫蘭騎士 4-0 亞特蘭大老鷹",
+      mvp: "LeBron James",
+      starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/LeBron_James_2014.jpg/220px-LeBron_James_2014.jpg"
+    },
+    west: {
+      teams: "金州勇士 4-2 休士頓火箭",
+      mvp: "Andre Iguodala",
+      starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andre Iguodala", "Harrison Barnes"],
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Stephen_Curry_2016.jpg/220px-Stephen_Curry_2016.jpg"
+    },
+    finals: {
+      teams: "金州勇士 4-2 克里夫蘭騎士",
+      fmvp: "Andre Iguodala",
+      startersEast: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
+      startersWest: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andre Iguodala", "Harrison Barnes"],
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Andre_Iguodala_2018.jpg/220px-Andre_Iguodala_2018.jpg"
+    }
   },
+
+  // 2016 年範例
   2016: {
-    ecf: "騎士 4-2 暴龍 - MVP: LeBron James",
-    finals: "騎士 4-3 勇士 - FMVP: LeBron James",
-    starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
-    image: "https://example.com/2016.jpg"
-  },
-  // ... 加上其他年份
-};
-
-function showData() {
-  const year = document.getElementById("yearSelect").value;
-  const result = document.getElementById("result");
-
-  if (data[year]) {
-    result.innerHTML = `
-      <h2>${year} 年</h2>
-      <p><strong>東區冠軍賽：</strong> ${data[year].ecf}</p>
-      <p><strong>總冠軍賽：</strong> ${data[year].finals}</p>
-      <p><strong>先發五人：</strong> ${data[year].starters.join(', ')}</p>
-      <img src="${data[year].image}" alt="${year} 照片" style="max-width: 100%; height: auto;">
-    `;
-  } else {
-    result.innerHTML = "<p>尚無資料</p>";
+    east: {
+      teams: "克里夫蘭騎士 4-2 多倫多暴龍",
+      mvp: "LeBron James",
+      starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/LeBron_James_2014.jpg/220px-LeBron_James_2014.jpg"
+    },
+    west: {
+      teams: "金州勇士 4-3 奧克拉荷馬雷霆",
+      mvp: "Kevin Durant",
+      starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevin Durant", "Andre Iguodala"],
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Kevin_Durant_2017_cropped.jpg/220px-Kevin_Durant_2017_cropped.jpg"
+    },
+    finals: {
+      teams: "克里夫蘭騎士 4-3 金州勇士",
+      fmvp: "LeBron James",
+      startersEast: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"],
+      startersWest: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Kevin Durant", "Andre Iguodala"],
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/LeBron_James_2014.jpg/220px-LeBron_James_2014.jpg"
+    }
   }
 }
