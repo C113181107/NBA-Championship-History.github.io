@@ -6,7 +6,7 @@ const data = {
       starters: ["LeBron James", "Kyrie Irving", "Kevin Love", "Tristan Thompson", "JR Smith"]
     },
     west: {
-      teams: "金州勇士 4-2 休士頓火箭",
+      teams: "金州勇士 4-1 休士頓火箭",
       mvp: "Andre Iguodala",
       starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andre Iguodala", "Harrison Barnes"]
     },
