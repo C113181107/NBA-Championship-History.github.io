@@ -127,12 +127,12 @@ const data = {
   },
   2022: {
     east: {
-      teams: "波士頓塞爾提克 4-3 密爾瓦基公鹿",
+      teams: "波士頓塞爾提克 4-3 邁阿密熱火",
       mvp: "Jayson Tatum",
       starters: ["Marcus Smart", "Jaylen Brown", "Jayson Tatum", "Al Horford", "Robert Williams III"]
     },
     west: {
-      teams: "金州勇士 4-2 丹佛金塊",
+      teams: "金州勇士 4-1 達拉斯獨行俠",
       mvp: "Stephen Curry",
       starters: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andrew Wiggins", "Kevon Looney"]
     },
