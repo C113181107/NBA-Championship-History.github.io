@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA 冠軍歷史</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>NBA 冠軍歷史（2015-2024）</h1>
+  <select id="yearSelect" onchange="showData()">
+    <option value="">請選擇年份</option>
+    <!-- 年份選單 -->
+    <script>
+      for (let y = 2015; y <= 2024; y++) {
+        document.write(`<option value="${y}">${y}</option>`);
+      }
+    </script>
+  </select>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
